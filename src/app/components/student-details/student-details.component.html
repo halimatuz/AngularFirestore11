@@ -1,0 +1,64 @@
+<div *ngIf="curStd" class="edit-form">
+    <h4>Student</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="curStd.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="faculty">Faculty</label>
+        <input
+          type="text"
+          class="form-control"
+          id="faculty"
+          [(ngModel)]="curStd.faculty"
+          name="faculty"
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          [(ngModel)]="curStd.address"
+          name="address"
+        />
+      </div>
+      <div class="form-group">
+        <label><strong>Gender:</strong></label>
+        {{ curStd.gender ? "true" : "false" }}
+      </div>
+    </form>
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="curStd.gender"
+      (click)="updateGdr(false)"
+    >
+      Male
+    </button>
+    <button
+      *ngIf="!curStd.gender"
+      class="badge badge-primary mr-2"
+      (click)="updateGdr(true)"
+    >
+      Female
+    </button>
+    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+      Delete
+    </button>
+    <button type="submit" class="badge badge-success" (click)="updateStudent()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!curStd">
+    <br />
+    <p>Cannot access this Student...</p>
+  </div>

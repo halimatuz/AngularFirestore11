@@ -1,0 +1,34 @@
+<div class="section section-buttons">
+    <div class="container">
+        <div class="tim-title">
+            <h2>Basic Components</h2>
+        </div>
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Student List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let x of stdst; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveSTD(x, i)"
+        >
+          {{ x.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="curStd">
+        <app-student-details
+          (refreshList)="refreshList()"
+          [std]="curStd"
+        ></app-student-details>
+      </div>
+      <div *ngIf="!curStd">
+        <br />
+        <p>Please click on a Tutorial...</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,57 @@
+<div class="section section-buttons">
+    <div class="container">
+        <div class="tim-title">
+            <h2>Basic Components</h2>
+        </div>
+<div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="std.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="faculty">Your Faculty </label>
+        <input
+          class="form-control"
+          id="faculty"
+          required
+          [(ngModel)]="std.faculty"
+          name="faculty"
+        />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input
+          class="form-control"
+          id="gender"
+          required
+          [(ngModel)]="std.gender"
+          name="gender"
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          class="form-control"
+          id="address"
+          required
+          [(ngModel)]="std.address"
+          name="address"
+        />
+      </div>
+      <button (click)="saveSTD()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newSTD()">Add</button>
+    </div>
+  </div>
+  </div>
+  </div>
